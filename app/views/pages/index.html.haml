@@ -1,0 +1,24 @@
+
+.hero-unit
+	%h2 Sistema de Barbearia
+	%p 
+		O objetivo desse sistema é o gerenciamento da empresa e dos clientes de uma forma centralizada e segura.
+	%p
+		/ %a.btn.btn-primary.btn-large Leia mais &raquo;
+.row
+	/ .span4
+	/ 	%h2 Agenda
+	/ 	%p
+	/ 		Agenda do dia 
+	/ 		= I18n.localize(Time.now,:format => "%A, %d/%m/%y")
+			
+	/ 	%a.btn Leia mais &raquo;
+	/ .span4
+	/ 	%h2 Clientes
+	/ 	%p
+			
+	/ 	%a.btn{:href=>'pacientes'} Leia mais &raquo;
+	/ / .span4
+	/ /	%h2 Atendimento
+	/ /	%a.btn Leia mais &raquo;
+

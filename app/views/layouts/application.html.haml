@@ -1,0 +1,73 @@
+!!!5
+%html(lang="pt-br")
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %title Sistema de Barbearia
+    = csrf_meta_tags
+
+
+    = stylesheet_link_tag "application", :media => "all"
+    
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand(href= root_url) Início
+          .container.nav-collapse
+            %ul.nav
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle"=>"dropdown", :href=>"#"}
+                  Cadastro
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    %a{:href=>clientes_path} Clientes
+                  %li
+                    %a{:href=>servicos_path} Serviços
+              %li.dropdown
+                %a{:href=>agendamentos_path}
+                  Agendamento
+               
+              / %li.dropdown
+              /   %a.dropdown-toggle{"data-toggle"=>"dropdown", :href=>"#"}
+              /     Relatório
+              /     %b.caret
+              /   %ul.dropdown-menu
+              /     %li
+              /       -#.dropdown-submenu
+              /       %a{:href=>''} Atendimentos  
+              /       -#%ul.dropdown-menu
+              /         -#%li.dropdown-header Produção
+              /         -#%li.divider
+              /         -#%li
+              /           -#%a{:href=>atendimento_reports_path} da Unidade
+              /           -#%a{:href=>funcionario_reports_path} por profissional
+              /     -#%li
+              /       -#%a{:href=>"#"} Funcionário
+              /     %li
+              /       %a{:href=>"#"} Clientes
+
+              /%li
+              /  %a{:href=>"#"}Atendimento
+
+              
+            %form.navbar-form.pull-right
+              %ul.nav
+                %li= link_to('Login', '')
+    .container
+      = bootstrap_flash
+      = yield
+     
+/      .content
+/        .row
+/          .span12  
+/           = bootstrap_flash
+/           = yield
+= javascript_include_tag "application"
+

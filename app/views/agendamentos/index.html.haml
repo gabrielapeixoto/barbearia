@@ -1,0 +1,27 @@
+%h1 Listing agendamentos
+
+%table
+  %thead
+    %tr
+      %th Cliente
+      %th Data
+      %th Hora
+      %th Servico
+      %th
+      %th
+      %th
+
+  %tbody
+    - @agendamentos.each do |agendamento|
+      %tr
+        %td= agendamento.cliente
+        %td= agendamento.data
+        %td= agendamento.hora
+        %td= agendamento.servico
+        %td= link_to 'Show', agendamento
+        %td= link_to 'Edit', edit_agendamento_path(agendamento)
+        %td= link_to 'Destroy', agendamento, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Agendamento', new_agendamento_path

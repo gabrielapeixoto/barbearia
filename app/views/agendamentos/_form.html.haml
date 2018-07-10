@@ -1,0 +1,22 @@
+= form_for @agendamento do |f|
+  - if @agendamento.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@agendamento.errors.count, "error")} prohibited this agendamento from being saved:"
+      %ul
+        - @agendamento.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :cliente
+    = f.text_field :cliente
+  .field
+    = f.label :data
+    = f.date_select :data
+  .field
+    = f.label :hora
+    = f.time_select :hora
+  .field
+    = f.label :servico
+    = f.text_field :servico
+  .actions
+    = f.submit 'Save'
